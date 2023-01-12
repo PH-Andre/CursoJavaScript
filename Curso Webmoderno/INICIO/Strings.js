@@ -19,3 +19,20 @@ console.log(escola.replace(3,'e'))  // subistitui o primeiro parametro pelo segu
 
 
 console.log('Ana,Maria,Pedro'.split(','))    // gera uma lista separada pelo parametro passado no split
+
+// TEMPLATE 
+var templateExemplo = `
+   olá
+  ${escola}!`
+
+console.log(templateExemplo);
+
+//  EXPRESSOES...
+
+console.log(`1 + 1 = ${1+1}`)
+
+// função passar para maiusculo
+
+const up = parametroQueVaiSerPassado => parametroQueVaiSerPassado.toUpperCase(); 
+
+console.log(`Eiii... ${up('cuidadooo')}!!`)                     // ${   }      insere uma variavel no meio de uma string, no caso no template tem mais uso
