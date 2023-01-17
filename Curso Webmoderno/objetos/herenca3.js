@@ -14,3 +14,5 @@ console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`)
 
 console.log(Object.keys(filha1))
 console.log(Object.keys(filha2))
+
+
