@@ -17,7 +17,7 @@ function inverter(obj){
     }
     jsoncerto =   jsoncerto + " }"
    
-    
+    console.log(jsoncerto)
    let retorn = JSON.parse(jsoncerto)
    return retorn
 }

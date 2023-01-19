@@ -1,0 +1,104 @@
+<h1>Projeto</h1>
+<style>
+    .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;}
+
+  .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.lista{
+
+color: #000;
+}
+</style>
+
+
+<body>
+    
+<ul class="tree">
+    <li>
+        <button class="accordion">Backend</button>
+        <div class="panel">
+          <ul>
+            <li>
+                <button class="accordion">App</button>
+                 <div class="panel">
+                    <ul>
+                        <li class="lista"> produto.js</li>
+                        <li class="lista"> Usuario.js</li>
+                        <li class="lista">venda.js</li>
+                     </ul>
+                 </div>
+            </li>
+            <li>
+                <button class="accordion">Backend</button>
+                    <div class="panel">
+                        <ul>
+                            <li class="lista">Banco.js</li>
+                            <li class="lista">Rotas.js</li>
+                            <li class="lista">Servidor.js</li>
+                        </ul>
+                    </div>
+            </li>
+        </ul>
+        </div>
+    </li>
+    <li>
+        <button class="accordion">FrontEnd</button>
+        <div class="panel">
+             <ul>
+                    <li>
+                        <button class="accordion">Public</button>
+                             <div class="panel">
+                            <ul>
+                               <li class="lista">app.cs</li>
+                                <li class="lista">app.js</li>
+                                 <li class="lista">Index.html</li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+    </li>
+    
+</ul>
+
+<Script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</Script>
+
+</body>
+
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
