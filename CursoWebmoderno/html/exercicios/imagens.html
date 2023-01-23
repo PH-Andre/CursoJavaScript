@@ -1,0 +1,114 @@
+<div wm-slider>
+<p>
+    <img src="https://img.quizur.com/f/img61a90dab78dbb8.81298788.jpg" 
+    alt="Cone" 
+    width="513" height="342"
+    title="gurido Cone"> <!-- usa alt para deficiente-->
+    
+</p>
+
+    <p>
+    <img src="form/imagensUsadas/6c0193727469dec2bd0ce3ae6244b8d8.jpg" 
+    alt="Escanor" 
+    width="513" height="342"
+    title="Escanooor"> 
+    </p>
+
+    <p class="texto">
+        <img src="form/imagensUsadas/k9k992-finals.jpg" 
+        alt="Escanor" height="800" aling="left"> 
+    </p>
+
+  
+<p>
+    <img src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2021/02/nyan-cat-1.gif" 
+    alt="Gatoo " 
+    width="600" height="600"
+    title="gatovoador"> 
+</p>
+
+
+
+<p class="cidade"></p>
+
+<p>
+    <picture>
+        <source srcset="https://i.pinimg.com/originals/65/eb/dc/65ebdc51813595db15a4c23e5205dde6.jpg"
+        media="(min-width: 600px)">
+        <img src="https://media.istockphoto.com/id/1019205372/pt/foto/tokyo-japan-shinjuku-3-aug-2018-the-beautiful-cityscape-architecture-and-building-around.jpg" alt="dsdsa">
+    </picture>
+</p>
+
+</div>
+
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+   
+
+    .texto{
+        width: 400x;
+    }
+    .texto img{
+        margin-right: 12px;
+    }
+
+    .cidade{
+        width: 900px;
+        height: 900px;
+        background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/01/12/8f/9a/shibuya.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+</style>
+
+<script>
+    function mover(elem, incio, fim, passo, callback){
+        const novoInicio = incio - passo
+    if(novoInicio >= fim) {
+        elem.style.left = novoInicio + 'px'
+        setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+    } else{
+        callback()
+    }
+ }
+
+   /* const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    
+    mover(p, 3000, -600, 5, () => {
+        console.log("terminou")
+    })
+  */
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+    function exibirSlide(slides, slide){
+        slide.style.display = "block"
+        
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px` 
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) +1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider() 
+
+
+</script>
