@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /* 
+            Em linhas gerais
+
+            1- Regras com !important
+            2- seletores mais específicos
+            3- última regra é o processado, o ultimo tem prioridade maior
+        
+        */ 
+        p.observacao{
+            background: linear-gradient(#e66465, #9198e5);
+            border: dashed 5px;
+            padding: 20px;
+            font-size: 40px;
+        }
+        
+        p{
+            background-color: #aaa;
+        }
+        /* Selector de classe tem mais prioridade  */
+        
+        
+        
+        .observacao{
+            background-color: aqua;
+            border: dashed 5px;
+            padding: 40px; 
+            font-size: 150px !important;
+        }
+        /* elemento e a classe tem mais prioridade que só a classe */
+       
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
