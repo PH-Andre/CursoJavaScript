@@ -7,7 +7,89 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        header{
+            display: block;
+            background-color:  black;
+            width: 100%;
+            height: 70px;
+        }
+
+        img{
+            margin-top: 5px;
+            height: 46px;
+        }
+
+        nav {
+            display: inline;
+            list-style: none;
+            position: absolute;
+            top: 35px;
+            left: 300px;
+            background-color: black;
+
+            width: 500px;
+            height: 40px;
+        }
+
+        li{
+            display: inline;
+            color: white;
+        }
+
+        ul{
+         margin: 0px;
+         padding: 0px;
+         position: absolute;
+         top: 0px;
+         width: 499px;
+         height: 39px;
+        }
+
+        a{
+           top: 20px;
+           padding: 5px 15px;
+           border: solid 5px #222;
+           background-color: black;
+           color: white;
+           font-style: normal;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        aside{
+            position: absolute;
+            right: 20px;
+            top: 35px;
+        }
+
+        .bttRegistrar{
+            background-color: #222;
+            bottom: 50px;
+        }
+
+        .bttinicio{
+            bottom: 50px;
+        }
+
+        .btmlogin:hover {
+            background-color: gray;
+        }
+        .bttRegistrar:hover {
+            background-color: rgba(226, 13, 13, 0.986);
+        }
+
+        .bttinicio:hover {
+            background-color: gray;
+        }
+        .bttcurso:hover {
+            background-color: gray;
+        }
+        .bttsobre:hover {
+            background-color: gray;
+        }
+       .bttcontato:hover {
+            background-color: gray;
+        }
+    
     </style>
 </head>
 
@@ -23,23 +105,23 @@
         </button>
         <nav class="menu">
             <ul>
-                <li>
+                <li classe="bttinicio">
                     <a href="#inicio">Início</a>
                 </li>
                 <li>
-                    <a href="#cursos">Cursos</a>
+                    <a classe="bttcurso" href="#cursos">Cursos</a>
+                </li>
+                 <li>
+                    <a classe="bttsobre" href="#sobre">Sobre</a>
                 </li>
                 <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
+                    <a classe="bttcontato" href="#contato">Contato</a>
                 </li>
             </ul>
         </nav>
         <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
+            <a class="btmlogin" href="#login">Login</a>
+            <a class="bttRegistrar" href="#registar" class="botao destaque">Registrar</a>
         </aside>
     </header>
 
