@@ -42,9 +42,7 @@
             }
             
             fetch(form.action, options)
-           console.log(options.body)
                 .then(resp => resp.json())
-                
                 .then(json => {
                     const resultado = document.getElementById('resultado')
                     resultado.innerHTML = JSON.stringify(json)

@@ -6,6 +6,8 @@ app.use(express.static('.'))
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
 
+
+
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -19,7 +21,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage }).single('arquivo')
 
-app.post('/upload', (req, res) => {
+app.post('upload', (req, res) => {
     upload(req, res, err =>  {
         if (err){
             return res.end('Ocorreu um erro.')
@@ -29,11 +31,27 @@ app.post('/upload', (req, res) => {
     })
 })
 
-app.post('/formulario', (req, res) => {
+app.post('formulario', (req, res) => {
     res.send({
         ...req.body,
         id: 1
     })
 })
+
+app.get('teste', (req, res) => res.send('ok'))
+
+
+
+app.get('parOuImpar', (req, res) => {
+    const par = parseInt(req.query.numero) % 2 === 0 
+    // req.body
+    // req.query
+    // req.params   modos de pegar o dado
+    res.send({
+        resultado: par ? 'par' : impar
+    })
+
+})
+
 
 app.listen(8080, () => console.log('Executando...'))
